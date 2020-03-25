@@ -1,52 +1,72 @@
-.descriptionBarAndTastingNotesBarContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  margin-left: 12px;
-  padding-bottom: 36px;
-  justify-content: flex-end;
-  z-index: 2;
-
-  .descriptionBar {
+.cardBg {
+  .descriptionBarAndTastingNotesBarContainer {
     position: relative;
-    margin-left: 24px;
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 12px;
+    padding-bottom: 36px;
+    justify-content: flex-end;
+    z-index: 2;
+
+    .descriptionBar {
+      position: relative;
+      margin-left: 24px;
+      margin-bottom: 25px;
+    }
+
+    .tastingNotesBar {
+      position: relative;
+      left: -36px;
+    }
   }
-  .tastingNotesBar {
+
+  .bottleContainer {
+    width: 100%;
+    min-width: 125px;
+    display: flex;
+    justify-content: center;
     position: relative;
-    left: -36px;
-  }
-}
+    bottom: -40px;
 
-.bottleContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  bottom: -40px;
-  .bottle {
-    position: absolute;
-    bottom: 0;
-    right: auto;
-    max-width: 205px;
-    transition: 0.5s ease-in-out;
-  }
-  .smallBottle {
-    right: -35px;
-    max-width: 160px;
-  }
-
-  @media screen and (max-width: 600px) {
     .bottle {
+      position: absolute;
+      bottom: 0;
+      right: auto;
+      max-width: 205px;
+      transition: 0.5s ease-in-out;
+    }
+
+    .smallBottle {
       right: -35px;
       max-width: 160px;
     }
-  }
-}
 
-.decorationStrip {
-  position: absolute;
-  top: 35px;
-  right: -10px;
+    @media screen and (max-width: 600px) {
+      .bottle {
+        right: -35px;
+        max-width: 160px;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      min-width: 0;
+      bottom: -25px;
+      .bottle {
+        right: -20px;
+        max-width: 110px;
+      }
+    }
+    @media screen and (max-height: 500px) {
+      bottom: -25px;
+      .bottle {
+        max-width: 110px;
+      }
+    }
+  }
+
+  .decorationStrip {
+    position: absolute;
+    top: 35px;
+    right: -10px;
+  }
 }

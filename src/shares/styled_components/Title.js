@@ -11,6 +11,11 @@ export default styled.span`
     font-size: 36px;
     line-height: 36px;
     font-weight: 500;
+
+    @media (max-width: 500px) {
+      font-size: 34px;
+      line-height: 34px;
+    }
   }
   &.small {
     font-size: 18px;

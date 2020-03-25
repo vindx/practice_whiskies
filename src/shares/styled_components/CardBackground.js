@@ -4,7 +4,7 @@ export default styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  margin: 35px;
+  margin: 50px 35px;
   border-radius: 10px;
   background: linear-gradient(
       45deg,
@@ -16,8 +16,15 @@ export default styled.div`
   background-color: #040707;
   background-size: cover;
 
-  width: auto;
-  min-width: 420px;
-  max-width: 640px;
+  width: 100%;
+  min-width: fit-content;
   height: 544px;
+
+  @media screen and (max-width: 500px) {
+    height: 400px;
+  }
+
+  @media screen and (max-height: 500px) {
+    height: 300px;
+  }
 `;

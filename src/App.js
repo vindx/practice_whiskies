@@ -1,20 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "./components/Card/Card";
-
-const liquid = {
-  title: "Auchentoshan",
-  image: "auchentoshan.png",
-  cost: 25,
-  region: "lowlands",
-  tasting_notes: ["honey", "citrus", "nuttines"],
-  uri: "/auchentoshan"
-};
+import whiskies from "./data/whiskies";
+import cardStyles from "./components/Card/Card.module.scss";
 
 function App() {
+  useEffect(() => {
+    const documentWidth = document.body.offsetWidth;
+    const cards = document.getElementsByClassName(cardStyles.cardBg);
+    const bottles = document.getElementsByClassName(cardStyles.bottle);
+    if (documentWidth > 600) {
+      Array.from(cards).forEach(card => {
+        if (card.offsetWidth < 530) {
+          Array.from(bottles).forEach(bottle =>
+            bottle.classList.add(cardStyles.smallBottle)
+          );
+        }
+      });
+    }
+  }, []);
+
   return (
-    <>
-      <Card liquid={liquid}/>
-    </>
+    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+      <Card key={whiskies[0].title} liquid={whiskies[0]} />
+      <Card key={whiskies[1].title} liquid={whiskies[1]} />
+      <Card key={whiskies[2].title} liquid={whiskies[2]} />
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import getColorByRegion from "../../shares/helpers/colorsByRegions/getColorsByRegion";
 import CardBackground from "../../shares/styled_components/CardBackground";
 import Description from "../../shares/components/Description/Description";
@@ -11,17 +11,8 @@ const Card = ({ liquid, ...props }) => {
   const { title, region, cost, tasting_notes, image } = liquid;
   const gradientColors = getColorByRegion(region);
 
-  useEffect(() => {
-    const documentWidth = document.body.offsetWidth;
-    const cardWidth = document.getElementById("card_bg").offsetWidth;
-    const bottle = document.getElementById("bottle");
-    if (cardWidth < 530 && documentWidth > 600) {
-      bottle.classList.add(styles.smallBottle);
-    }
-  }, []);
-
   return (
-    <CardBackground id="card_bg" {...props}>
+    <CardBackground className={styles.cardBg} {...props}>
       <div className={styles.descriptionBarAndTastingNotesBarContainer}>
         <Description
           className={styles.descriptionBar}
@@ -36,7 +27,7 @@ const Card = ({ liquid, ...props }) => {
         />
       </div>
       <div className={styles.bottleContainer}>
-        <Bottle id="bottle" image={image} className={styles.bottle} />
+        <Bottle image={image} className={styles.bottle} />
       </div>
       <DecorationStrip
         gradientColors={gradientColors}
