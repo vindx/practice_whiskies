@@ -1,4 +1,4 @@
-import colors from "./colors";
+import colors from "../../../data/colors";
 
 const setupColorsByRegions = colors => region => {
   const defaultColor = ["#0663AE", "#174272"];
