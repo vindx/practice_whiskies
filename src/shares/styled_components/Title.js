@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export default styled.span`
   display: block;
-  color: #ffffff;
   &:first-letter {
     text-transform: uppercase;
   }
 
+  &.white {
+    color: #ffffff;
+  }
   &.big {
     font-size: 36px;
     line-height: 36px;
