@@ -16,7 +16,6 @@ export default styled.div`
   background-color: #040707;
   background-size: cover;
 
-  width: 100%;
   min-width: fit-content;
   height: 544px;
 
