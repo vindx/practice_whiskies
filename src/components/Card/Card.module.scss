@@ -1,0 +1,52 @@
+.descriptionBarAndTastingNotesBarContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-left: 12px;
+  padding-bottom: 36px;
+  justify-content: flex-end;
+  z-index: 2;
+
+  .descriptionBar {
+    position: relative;
+    margin-left: 24px;
+    margin-bottom: 25px;
+  }
+  .tastingNotesBar {
+    position: relative;
+    left: -36px;
+  }
+}
+
+.bottleContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: -40px;
+  .bottle {
+    position: absolute;
+    bottom: 0;
+    right: auto;
+    max-width: 205px;
+    transition: 0.5s ease-in-out;
+  }
+  .smallBottle {
+    right: -35px;
+    max-width: 160px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .bottle {
+      right: -35px;
+      max-width: 160px;
+    }
+  }
+}
+
+.decorationStrip {
+  position: absolute;
+  top: 35px;
+  right: -10px;
+}

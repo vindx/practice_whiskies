@@ -1,0 +1,49 @@
+import React, { useEffect } from "react";
+import getColorByRegion from "../../shares/helpers/colorsByRegions/getColorsByRegion";
+import CardBackground from "../../shares/styled_components/CardBackground";
+import Description from "../../shares/components/Description/Description";
+import TastingNotesBar from "../../shares/components/TastingNotesBar/TastingNotesBar";
+import Bottle from "../../shares/components/Bottle/Bottle";
+import DecorationStrip from "../../shares/styled_components/DecorationStrip";
+import styles from "./Card.module.scss";
+
+const Card = ({ liquid, ...props }) => {
+  const { title, region, cost, tasting_notes, image } = liquid;
+  const gradientColors = getColorByRegion(region);
+
+  useEffect(() => {
+    const documentWidth = document.body.offsetWidth;
+    const cardWidth = document.getElementById("card_bg").offsetWidth;
+    const bottle = document.getElementById("bottle");
+    if (cardWidth < 530 && documentWidth > 600) {
+      bottle.classList.add(styles.smallBottle);
+    }
+  }, []);
+
+  return (
+    <CardBackground id="card_bg" {...props}>
+      <div className={styles.descriptionBarAndTastingNotesBarContainer}>
+        <Description
+          className={styles.descriptionBar}
+          title={title}
+          region={region}
+          cost={cost}
+        />
+        <TastingNotesBar
+          tasting_notes={tasting_notes}
+          gradientColors={gradientColors}
+          className={styles.tastingNotesBar}
+        />
+      </div>
+      <div className={styles.bottleContainer}>
+        <Bottle id="bottle" image={image} className={styles.bottle} />
+      </div>
+      <DecorationStrip
+        gradientColors={gradientColors}
+        className={styles.decorationStrip}
+      />
+    </CardBackground>
+  );
+};
+
+export default Card;
