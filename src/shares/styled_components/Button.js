@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export default styled.button`
   background: none;
@@ -16,6 +16,16 @@ export default styled.button`
   outline: none;
   font-size: 18px;
   opacity: 0.6;
+  ${({ gradientColors }) =>
+    gradientColors &&
+    css`
+      background: linear-gradient(
+        90deg,
+        ${gradientColors[0]},
+        ${gradientColors[1]}
+      );
+    `}
+
   &:first-letter {
     text-transform: uppercase;
   }
