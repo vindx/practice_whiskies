@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import Card from "../../Card/Card";
-import cardStyles from "../../Card/Card.module.scss";
+import { Link } from "react-router-dom";
+import Card from "../../../components/Card/Card";
+import cardStyles from "../../../components/Card/Card.module.scss";
 import styles from "./CardsSection.module.scss";
 
 export default ({ whiskies, ...props }) => {
@@ -10,7 +11,7 @@ export default ({ whiskies, ...props }) => {
     const bottles = document.getElementsByClassName(cardStyles.bottle);
     if (documentWidth > 600) {
       Array.from(cards).forEach(card => {
-        if (card.offsetWidth < 530) {
+        if (card.offsetWidth < 600) {
           Array.from(bottles).forEach(bottle =>
             bottle.classList.add(cardStyles.smallBottle)
           );
@@ -22,7 +23,9 @@ export default ({ whiskies, ...props }) => {
   return (
     <section className={styles.cardsContainer} {...props}>
       {whiskies.map(whiskey => (
-        <Card key={whiskey.title} liquid={whiskey} />
+        <Link key={whiskey.title} to={whiskey.uri}>
+          <Card liquid={whiskey} className={styles.card} />
+        </Link>
       ))}
     </section>
   );

@@ -1,0 +1,17 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    .purchaseButton {
+      width: 200px;
+      color: white;
+    }
+  }
+}
