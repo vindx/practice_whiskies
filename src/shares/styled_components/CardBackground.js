@@ -15,6 +15,7 @@ export default styled.div`
     url("assets/card-bg.svg") no-repeat center;
   background-color: #040707;
   background-size: cover;
+  box-shadow: 0 0 25px rgba(4, 7, 7, 0.5);
 
   min-width: fit-content;
   height: 544px;
