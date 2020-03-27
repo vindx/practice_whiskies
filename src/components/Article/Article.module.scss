@@ -1,0 +1,32 @@
+.article {
+  min-height: 30vh;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .bigTitle {
+    max-width: 450px;
+    margin-bottom: 15px;
+    font-size: 46px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    font-style: italic;
+    opacity: 0.999;
+
+    @media screen and (max-width: 500px) {
+      font-size: 38px !important;
+    }
+  }
+
+  .smallTitle {
+    max-width: 600px;
+    letter-spacing: 0.5px;
+    opacity: 0.999 !important;
+
+    @media screen and (max-width: 500px) {
+      font-size: 14px !important;
+    }
+  }
+}
