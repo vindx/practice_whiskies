@@ -2,11 +2,16 @@
   "name": "forliquid",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "13.1.x",
+    "npm": "6.x"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "classnames": "^2.2.6",
+    "express": "^4.17.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -14,9 +19,11 @@
     "react-scripts": "3.4.1",
     "styled-components": "^5.0.1"
   },
+  "main": "server.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "server": "node server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install && npm run build"
   },
   "eslintConfig": {
