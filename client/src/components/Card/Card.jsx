@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import getColorByRegion from "../../shares/helpers/colorsByRegions/getColorsByRegion";
+import { getColorsByRegion } from "../../shares/helpers/colorsByRegions";
 import CardBackground from "../../shares/styled_components/CardBackground";
 import Description from "../../shares/components/Description/Description";
 import TastingNotesBar from "../../shares/components/TastingNotesBar/TastingNotesBar";
@@ -10,7 +10,7 @@ import styles from "./Card.module.scss";
 
 const Card = ({ liquid, className, ...props }) => {
   const { title, region, cost, tasting_notes, image } = liquid;
-  const gradientColors = getColorByRegion(region);
+  const gradientColors = getColorsByRegion(region);
 
   return (
     <CardBackground

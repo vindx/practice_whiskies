@@ -3,14 +3,12 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import whiskies from "./data/whiskies";
-import articles from "./data/articles";
 import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App store={{ whiskies, articles }} />
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,44 +1,28 @@
 {
-  "name": "forliquid",
-  "version": "0.1.0",
-  "private": true,
+  "name": "forliquid_server",
+  "version": "1.0.0",
+  "description": "Test app about liquids for \"Team Liquid\" :)",
   "engines": {
     "node": "13.1.x",
     "npm": "6.x"
   },
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "classnames": "^2.2.6",
-    "express": "^4.17.1",
-    "node-sass": "^4.13.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "styled-components": "^5.0.1"
-  },
   "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "server": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install && npm run build"
+    "server": "nodemon server.js",
+    "client": "npm run start --prefix client",
+    "client:install": "cd client && npm install",
+    "client:build": "npm run build --prefix client",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client:install && npm run client:build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "author": "Kiryl Karelin <kiruha9414@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "cross-env": "^7.0.0",
+    "nodemon": "^2.0.2"
   }
 }
